@@ -15,10 +15,12 @@ dotenv.config({ path: "./.env" });
 
 const app = express();
 
-app.use(cors({
-    origin: 'http://localhost:5173', // your React app
-    credentials: true // 👈 this allows cookies to be sent
-}));
+app.use(
+  cors({
+    origin: "https://url-shortner-frontend-rosy.vercel.app/", // your React app
+    credentials: true, // 👈 this allows cookies to be sent
+  })
+);
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
